@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Response Selection</title>
+</head>
+<body> 
+<p>Gaurav bhai ki video  chahiye?</p>
+<form>
+  <p>Select Yes or No:</p>
+  
+  <!-- First set of options (Yes or No) -->
+  <label>
+    <input type="radio" name="choice" value="yes" onclick="handleSelection(this.value)"> Yes
+  </label>
+  <label>
+    <input type="radio" name="choice" value="no" onclick="handleSelection(this.value)"> No
+  </label>
+
+  <!-- Response for "Yes" - Link (initially hidden) -->
+  <p id="yes-link" style="display: none;">
+    le kush rhe gandu <a href="https://xhamster.desi/videos/step-bro-bangs-step-bff-gaurav-heart-while-she-watches-crazy-xh28PaL" target="_blank">link</a>.
+  </p>
+
+  <!-- Response for "No" - Additional Option (initially hidden) -->
+  <div id="no-option" style="display: none;">
+    <p>Sugu bhai ki?</p>
+    <select id="second-choice" onchange="handleSecondChoice(this.value)">
+      <option value="">Select an option</option>
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+    </select>
+  </div>
+
+  <!-- Message for selecting "No" again (initially hidden) -->
+  <p id="no-message" style="display: none; color: red;">
+    Apni hi ghum kr mar le.
+  </p>
+
+  <!-- Response for selecting "Yes" in the second dropdown - Another Link (initially hidden) -->
+  <p id="second-yes-link" style="display: none;">
+    le kush rhe <a href="https://xnxx.health/video-1dggcr14/29/hentai_eroge_h_kisara_himeno" target="_blank">link</a>.
+  </p>
+</form>
+
+<script>
+  function handleSelection(value) {
+    const yesLink = document.getElementById("yes-link");
+    const noOption = document.getElementById("no-option");
+    const noMessage = document.getElementById("no-message");
+    const secondChoice = document.getElementById("second-choice");
+    const secondYesLink = document.getElementById("second-yes-link");
+
+    // Reset displays and selection
+    yesLink.style.display = "none";
+    noOption.style.display = "none";
+    noMessage.style.display = "none";
+    secondYesLink.style.display = "none";
+    secondChoice.selectedIndex = 0;
+
+    // Show the link if "Yes" is selected
+    if (value === "yes") {
+      yesLink.style.display = "block";
+    }
+    // Show the additional options if "No" is selected
+    else if (value === "no") {
+      noOption.style.display = "block";
+    }
+  }
+
+  function handleSecondChoice(value) {
+    const noMessage = document.getElementById("no-message");
+    const secondYesLink = document.getElementById("second-yes-link");
+
+    // Reset displays
+    noMessage.style.display = "none";
+    secondYesLink.style.display = "none";
+
+    // Show the "Apni hi ghum kr mar le" message if "No" is selected again
+    if (value === "no") {
+      noMessage.style.display = "block";
+    } 
+    // Show the second link if "Yes" is selected
+    else if (value === "yes") {
+      secondYesLink.style.display = "block";
+    }
+  }
+</script>
+</body>
+</html>
